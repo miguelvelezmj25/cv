@@ -1,0 +1,173 @@
+%% pdflatex Miguel Velez CV
+%% biber Miguel Velez CV
+%% pdflatex Miguel Velez CV
+%% pdflatex Miguel Velez CV
+
+\documentclass[11pt,letterpaper,roman]{moderncv}
+
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\renewcommand{\rmdefault}{ppl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage[scale=0.8]{geometry}
+\setlength{\hintscolumnwidth}{2.5cm}
+
+\name{Miguel}{Velez}
+\title{Ph.D. Student in Software Engineering}
+\address{Carnegie Mellon University}{5000 Forbes Ave}{Pittsburgh, PA 15213}
+\email{mvelezce [at] cs.cmu.edu}
+\homepage{http://www.cs.cmu.edu/\textasciitilde mvelezce/}
+\social[linkedin]{miguelvelezmj25}
+
+\quote{"Premature optimization is the root of all evil" -Donald Knuth}
+
+\usepackage[maxbibnames=99,defernumbers=true,isbn=false,doi=false,url=false,sorting=none,backend=biber,style=numeric]{biblatex}
+
+\AtDataInput{%
+  \csnumgdef{entrycount:\therefsection:\thefield{entrytype}}{%
+    \csuse{entrycount:\therefsection:\thefield{entrytype}}+1}}
+    
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{entrycount:\therefsection:\thefield{entrytype}}+1-#1\relax}
+
+\defbibenvironment{bibliography}
+  {\list
+     {\printtext[labelnumberwidth]{% label format from numeric.bbx
+        \printfield{labelprefix}%
+        \printfield{labelnumber}}}
+     {\setlength{\topsep}{0pt}% layout parameters from moderncvstyleclassic.sty
+      \setlength{\labelwidth}{\hintscolumnwidth}%
+      \setlength{\labelsep}{\separatorcolumnwidth}%
+      \leftmargin\labelwidth%
+      \advance\leftmargin\labelsep}%
+      \sloppy\clubpenalty4000\widowpenalty4000}
+  {\endlist}
+  {\item}  
+  
+\addbibresource{bibliography.bib}  
+
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[0.75em]{}{
+  	\begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}
+    \hfill
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}
+    }
+}
+
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+
+\begin{document}
+
+\makecvtitle
+
+\section{Education}
+\cventry{2016--Present}{Ph.D. Software Engineering}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{}
+\cventry{2010--2015}{B.A. Computer Science (Physics minor)}{University of St Thomas}{St. Paul, MN}{USA}
+	{Advisor: Patrick Jarvis. Summa Cum Laude paper: ``Current and Future Relationships Between Robots and Humans.''}
+
+\section{Research Experience}
+\cventry{2016--Present}{Graduate Research Assistant}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{}{}
+\cventry{Summer 2015}{Research Intern}{Massachusetts Institute of Technology}{Cambridge, MA}{}
+	{Implemented features in Sketch that increased its expressiveness and made it more powerful.}
+\cventry{2014--2015}{Undergraduate Student Researcher}{University of St. Thomas}{St. Paul, MN}{}
+	{Parallelized CHA to increase the efficiency of analyzing the reachability of methods in source code. Enhanced WAH compression technique to query faster and more efficiently with two sets of metadata. Implemented a programming language that analyzed user input related to organic chemistry.}
+	
+\section{Industry Experience}
+\cventry{Spring 2016}{Application Developer/Software Engineer}{Sportradar US}{Minneapolis, MN}{}
+	{Accepted full-time offer. Developed an ETL application using Ruby that provided data for the NFL Radar360 research tool.}
+\cventry{Fall 2015}{Application Developer/Software Engineer}{Sportradar US}{Minneapolis, MN}{}
+	{Built a Ruby monitoring application to parse and build Formula 1 feeds.}
+\cventry{Spring 2015}{Jr. Application Developer}{SportsData/Sportradar US}{Minneapolis, MN}{}
+	{Implemented an application to parse and build MLB feeds using Ruby.}
+\cventry{2013--2015}{Cloud Developer Intern}{Valtira}{Minneapolis, MN}{}
+	{Implemented and maintained web applications with Java servlets, AngularJS, and MySQL databases.}
+
+\newpage
+
+\section{Publications}
+%\newrefcontext[labelprefix=C]
+\nocite{VSIC:FiC16}
+\printbibliography[heading=subbibliography,title={Refereed Conference Publications},type=inproceedings,resetnumbers=true]
+%\newrefcontext[labelprefix=M]
+\nocite{VS:IUST16,VS:CCSC15,VS:MSRP15,V:SUMMA15,VGS:IUST14}
+\printbibliography[heading=subbibliography,title={Miscellaneous},
+type=misc,resetnumbers=true]
+
+\section{Awards and Honors}
+\cvlistitem{\textbf{MSRP Research Internship at MIT}, 2015. Acceptance rate: 10.5\%}
+\cvlistitem{\textbf{CCSC:MW 2015 1\textsuperscript{st} place Student Posters \& Showcase Discovery Track}, 2015. \$100}
+\cvlistitem{\textbf{UST Student Travel Grant}, 2015. \$750}
+\cvlistitem{\textbf{UST Collaborative Inquiry Grant}, 2014, 2015. \$2000}
+\cvlistitem{\textbf{International Student Leadership Scholarship}, 2012. \$500}
+\cvlistitem{\textbf{UST Dean's Honor List}, 2010-2015.}
+\cvlistitem{\textbf{University of St. Thomas International Scholarship}, 2010-2015.}
+\cvlistitem{\textbf{University of St. Thomas Tuition Scholarship}, 2010-2015.}
+\cvlistitem{\textbf{American Field Service International Scholarship}, 2008-2009.}
+
+%\section{Software and Products}
+%\cvline{sqlplus}{A DSL to add alerts to various SQL DML events.\newline \textit{http://www.mijecu25.com/software/sqlplus/}}
+%\cvline{cstats}{Generate information about your file directory.\newline \textit{http://www.mijecu25.com/software/cstats/}}
+%\cvline{dsa}{Java library of data structures and algorithms.\newline \textit{http://www.mijecu25.com/software/dsa/}}
+%\cvline{Cubie Cruiser}{2D endless runner game written in Unity focused on avoiding obstacles.\newline \textit{http://www.mijecu25.com/software/games/cubiecruiser.html}}
+%\cvline{Urban Tennis}{First full game written in Unity published for the web.\newline \textit{http://www.mijecu25.com/software/games/urbantennis.html}}
+%\cvline{Unity Game Development Manual}{Guide of the basics of Unity game development.\newline \textit{https://github.com/mijecu25/unity-manual}}
+	
+%\section{Selected Press}
+%\cvlistitem{``CS Major's Research Poster Receives First Place at Conference.'' UST CISC Department, \textit{CISC Department News}, Oct. 2, 2015.}
+%\cvlistitem{``Two CISC Majors Win Prestigious Research Opportunities.'' UST CISC Department, \textit{CISC Department News}, Apr. 2, 2015.}
+
+\section{Other Interests and Activities}
+\cvlistitem{Science Club for Girls volunteer. Cambridge, MN. June 2015}
+\cvlistitem{UST Game Design Club 2014 – 2015.}
+\cvlistitem{Note taker 2013, 2015. Helped two students with disabilities to take notes in class.}
+\cvlistitem{UST Computer Science Consultant 2012 – 2015.}
+\cvlistitem{UST Computer Science Club 2011 – 2015.}
+\cvlistitem{UST Globally Minded Student Association 2010 – 2015.}
+\cvlistitem{St. Thomas Activities and Recreation President 2012 – 2013.}
+\cvlistitem{St. Thomas Activities and Recreation Intern 2011 – 2012.}
+\cvlistitem{UST Spanish Tutor 2010 – 2012.}
+\cvlistitem{2 STEM Learning Communities 2011.}
+\cvlistitem{UST Morrison Hall Council 2010 – 2011.}
+
+\section{References}
+
+\cvdoublecolumn{
+	\cvreference{Jason Sawin}
+    {Department of Computer \& Information Sciences}
+    {University of St. Thomas}
+    {}{}
+    {jason.sawin [at] stthomas.edu}
+    {+1 651 962 5478}
+}
+{
+    \cvreference{Armando Solar-Lezama}
+   	{Department of Electrical Engineering and Computer Science}
+   	{Massachusetts Institute of Technology}
+   	{}{}
+   	{asolar [at] csail.mit.edu}
+   	{+1 617 258 9727}	
+}
+
+\bigskip
+
+\cvdoublecolumn{
+	\cvreference{Patrick Jarvis}
+    {Department of Computer \& Information Sciences}
+    {University of St. Thomas}
+    {}{}
+    {pljarvis [at] stthomas.edu}
+    {+1 651 962 5482}	
+}
+{}
+
+\end{document}
