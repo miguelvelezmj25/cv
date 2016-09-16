@@ -23,7 +23,46 @@
 
 \quote{"Premature optimization is the root of all evil" -Donald Knuth}
 
-\usepackage[maxbibnames=99,defernumbers=true,isbn=false,doi=false,url=false,sorting=none,backend=biber,style=numeric]{biblatex}
+\usepackage[maxbibnames=99,
+			defernumbers=true,
+			isbn=false,
+			doi=false,
+			url=false,
+			sorting=ymdnt,
+			backend=biber,
+			style=numeric]{biblatex}
+
+\renewcommand*{\intitlepunct}{\space}
+
+\DeclareSortingScheme{ymdnt}{
+  \sort{
+    \field{presort}
+  }
+  \sort[final]{
+    \field{sortkey}
+  }
+  \sort[direction=descending]{
+    \field[strside=left,strwidth=4]{sortyear}
+    \field[strside=left,strwidth=4]{year}
+    \literal{9999}
+  }
+  \sort[direction=descending]{
+    \field{month}
+    \literal{9999}
+  }
+  \sort{
+    \field{sortname}
+    \field{author}
+    \field{editor}
+    \field{translator}
+    \field{sorttitle}
+    \field{title}
+  }
+  \sort{
+    \field{sorttitle}
+    \field{title}
+  }
+}
 
 \AtDataInput{%
   \csnumgdef{entrycount:\therefsection:\thefield{entrytype}}{%
@@ -98,7 +137,6 @@
 %\newrefcontext[labelprefix=C]
 \nocite{VSIC:FiC16}
 \printbibliography[heading=subbibliography,title={Refereed Conference Publications},type=inproceedings,resetnumbers=true]
-\vspace{5mm}
 %\newrefcontext[labelprefix=M]
 \nocite{VS:IUST16,VS:CCSC15,VS:MSRP15,V:SUMMA15,VGS:IUST14}
 \printbibliography[heading=subbibliography,title={Miscellaneous},
