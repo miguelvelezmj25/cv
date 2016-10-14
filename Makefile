@@ -1,3 +1,5 @@
+file = Miguel\ Velez\ CV
+
 generate-pdf: 
 	@make latex-clean
 	@make latex-pdf
@@ -8,12 +10,12 @@ generate-pdf:
 
 latex-clean:
 	@echo "############################# Cleaning latex files #############################"
-	latexmk -c Miguel\ Velez\ CV
+	latexmk -c ${file}
 
 latex-pdf:
 	@echo "\n############################# pdflatex  #############################" 
-	pdflatex Miguel\ Velez\ CV
+	pdflatex ${file}
 
 latex-biber:
 	@echo "\n############################# biber #############################"
-	biber Miguel\ Velez\ CV
+	biber ${file}
