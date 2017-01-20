@@ -1,3 +1,4 @@
 [submodule "bibliography"]
 	path = bibliography
 	url = git@github.com:miguelvelezmj25/bibliography.git
+    branch = master
