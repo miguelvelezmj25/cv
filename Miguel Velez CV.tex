@@ -2,6 +2,7 @@
 
 \moderncvstyle{classic}
 \moderncvcolor{burgundy}
+\setlength{\hintscolumnwidth}{2.5cm}
 
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -18,17 +19,21 @@
 
 \renewcommand*{\intitlepunct}{\space}
 \renewcommand{\rmdefault}{ppl}
-
-\setlength{\hintscolumnwidth}{2.5cm}
-
-\name{Miguel}{Velez}
-\title{Ph.D. Student in Software Engineering}
-\address{Carnegie Mellon University}{School of Computer Science}{Institute for Software Research}
-\email{mvelezce [at] cs.cmu.edu}
-\homepage{http://www.cs.cmu.edu/\textasciitilde mvelezce/}
-\social[linkedin]{miguelvelezmj25}
-
-\quote{"Premature optimization is the root of all evil" -Donald Knuth}
+\newcommand{\cvdoublecolumn}[2]{%
+  \cvitem[0.75em]{}{
+  	\begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}
+    \hfill
+    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}
+    }
+}
+\newcommand{\cvreference}[7]{%
+    \textbf{#1}\newline% Name
+    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
+    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
+    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
+    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
+    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
+    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
 \DeclareSortingScheme{ymdnt}{
   \sort{
@@ -81,25 +86,17 @@
       \sloppy\clubpenalty4000\widowpenalty4000}
   {\endlist}
   {\item}  
+
+\name{Miguel}{Velez}
+\title{Ph.D. Student in Software Engineering}
+\address{Carnegie Mellon University}{School of Computer Science}{Institute for Software Research}
+\email{mvelezce [at] cs.cmu.edu}
+\homepage{http://www.cs.cmu.edu/\textasciitilde mvelezce/}
+\social[linkedin]{miguelvelezmj25}
+
+\quote{"Premature optimization is the root of all evil" -Donald Knuth}
   
 \addbibresource{bibliography/bibliography.bib}  
-
-\newcommand{\cvdoublecolumn}[2]{%
-  \cvitem[0.75em]{}{
-  	\begin{minipage}[t]{\listdoubleitemcolumnwidth}#1\end{minipage}
-    \hfill
-    \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}
-    }
-}
-
-\newcommand{\cvreference}[7]{%
-    \textbf{#1}\newline% Name
-    \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
-    \ifthenelse{\equal{#3}{}}{}{#3\newline}%
-    \ifthenelse{\equal{#4}{}}{}{#4\newline}%
-    \ifthenelse{\equal{#5}{}}{}{#5\newline}%
-    \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
-    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
 
 \begin{document}
 
