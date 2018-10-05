@@ -25,14 +25,15 @@
     \begin{minipage}[t]{\listdoubleitemcolumnwidth}#2\end{minipage}
     }
 }
-\newcommand{\cvreference}[7]{%
+\newcommand{\cvreference}[8]{%
     \textbf{#1}\newline% Name
     \ifthenelse{\equal{#2}{}}{}{\addresssymbol~#2\newline}%
     \ifthenelse{\equal{#3}{}}{}{#3\newline}%
     \ifthenelse{\equal{#4}{}}{}{#4\newline}%
     \ifthenelse{\equal{#5}{}}{}{#5\newline}%
     \ifthenelse{\equal{#6}{}}{}{\emailsymbol~\texttt{#6}\newline}%
-    \ifthenelse{\equal{#7}{}}{}{\phonesymbol~#7}}
+    \ifthenelse{\equal{#7}{}}{}{~\texttt{#7}\newline}%
+    \ifthenelse{\equal{#8}{}}{}{\phonesymbol~#8}}
 
 \DeclareSortingScheme{ymdnt}{
   \sort{
@@ -190,6 +191,7 @@ type=misc,resetnumbers=true]
     {Carnegie Mellon University}
     {}{}
     {kaestner [at] cs.cmu.edu}
+    {}
     {+1 412 268 5254}
 }
 {
@@ -198,6 +200,7 @@ type=misc,resetnumbers=true]
    	{Google}
    	{}{}
    	{jworcest [at] google.com}
+   	{}
    	{+1 703 402 2084}	
 }
 
@@ -209,29 +212,38 @@ type=misc,resetnumbers=true]
    	{University of South Carolina}
    	{}{}
    	{pjamshid [at] cse.sc.edu}
+   	{}
    	{+1 412 519 8405}	
 }
 {
-	\cvreference{Sven Apel}
-   	{Department of Informatics and Mathematics}
-   	{University of Passau}
+	\cvreference{Norbert Siegmund}
+   	{Department of Computer Science}
+   	{Bauhaus-Universität Weimar}
    	{}{}
-   	{apel [at] uni-passau.de}
-   	{+49 851 509 3225}	
+   	{norbert.siegmund [at]}
+   	{uni-weimar.de}
+   	{+49 364 358 3850}	
 }
 
 \bigskip
 
 \cvdoublecolumn{
+	\cvreference{Sven Apel}
+   	{Department of Informatics and Mathematics}
+   	{University of Passau}
+   	{}{}
+   	{apel [at] uni-passau.de}
+   	{}
+   	{+49 851 509 3225}	
+}
+{
 	\cvreference{Armando Solar-Lezama}
    	{Department of Electrical Engineering and Computer Science}
    	{Massachusetts Institute of Technology}
    	{}{}
    	{asolar [at] csail.mit.edu}
+   	{}
    	{+1 617 258 9727}	
 }
-{
-}
-
 
 \end{document}
