@@ -16,6 +16,9 @@
 			style=numeric,
 			giveninits=true]{biblatex}
 \usepackage[sfdefault]{roboto}
+\usepackage{xpatch}
+
+\xpatchcmd{\cventry}{.\strut}{\strut}{}{}
 
 \renewcommand*{\intitlepunct}{\space}
 \newcommand{\cvdoublecolumn}[2]{%
@@ -135,31 +138,33 @@
 \makecvtitle
 
 \section{Education}
-\cventry{2016 - Present}{Ph.D. in Software Engineering}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{Advisor: Christian K{\"a}stner. Thesis Topic: White-Box Analysis of Configurable Systems.}
-\cventry{2016 - 2020}{M.S. in Software Engineering}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{}{}
-\cventry{2010 - 2015}{B.A. in Computer Science (Physics minor) }{University of St Thomas}{St. Paul, MN}{USA}
-	{Summa Cum Laude. Major and Minor GPA: 4.00/4.00. Cumulative GPA: 3.99/4.00.\\Advisor: Patrick Jarvis. Summa Cum Laude paper: ``Current and Future Relationships Between Robots and Humans''.}
+\cventry{2016 - Present}{Doctor of Philosophy in Software Engineering}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{Advisor: Christian K{\"a}stner. Thesis Topic: White-Box Performance Analysis of Configurable Systems}
+\cventry{2016 - 2020}{Master of Software Engineering}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{}{}
+\cventry{2010 - 2015}{Bachelor of Arts in Computer Science (Physics minor) }{University of St. Thomas}{St. Paul, MN}{USA}
+	{Summa Cum Laude. Major and Minor GPA: 4.00/4.00. Cumulative GPA: 3.99/4.00.\\Advisor: Patrick Jarvis. Summa Cum Laude paper: ``Current and Future Relationships Between Robots and Humans''}
 
 \section{Industry Experience}
 \subsection{Full-time}
 \cventry{2016}{Application Developer/Software Engineer}{Sportradar US}{Minneapolis, MN}{USA}
-	{Developed a Ruby ETL application that provided data for the NFL Radar360 research tool.}
+	{Developed a Ruby ETL application that provided data for the NFL Radar360 research tool}
 
 \medskip
 
 \subsection{Internships}
 \cventry{Summer 2020}{Software Engineering Intern}{Google}{Remote}{USA}
-	{Collected and surfaced metrics corresponding to RPC behavior during integration tests.}
+	{Collected and surfaced metrics corresponding to RPC behavior during integration tests}
 \cventry{Summer 2019}{Software Engineering Intern}{Google}{Sunnyvale, CA}{USA}
-	{Designed and implemented a data federation GraphQL layer in CDAP/Cloud Data Fusion.}
+	{Designed and implemented a data federation GraphQL layer in CDAP/Cloud Data Fusion}
 \cventry{Summer 2018}{Software Engineering Intern}{Google}{Mountain View, CA}{USA}
-	{Improved Suggest's ranking of contact actions in the Android Google Search App.}
+	{Improved Suggest's ranking of contact actions in the Android Google Search App}
 \cventry{Fall 2015}{Application Developer/Software Engineer}{Sportradar US}{Minneapolis, MN}{USA}
-	{Built a Ruby monitoring application to parse and build Formula 1 feeds.}
+	{Built a Ruby monitoring application to parse and build Formula 1 feeds}
 \cventry{Spring 2015}{Jr. Application Developer}{SportsData/Sportradar US}{Minneapolis, MN}{USA}
-	{Implemented a Ruby application to parse and build MLB feeds.}
+	{Implemented a Ruby application to parse and build MLB feeds}
 \cventry{2013 - 2014}{Cloud Developer Intern}{Valtira}{Minneapolis, MN}{USA}
-	{Developed web applications with Java servlets, AngularJS, and MySQL databases.}
+	{Developed web applications with Java servlets, AngularJS, and MySQL databases}
+
+\newpage
 
 \section{Research Experience}
 \cventry{2016 - Present}{Graduate Research Assistant}{Carnegie Mellon University}{Pittsburgh, PA}{USA}{}{}
@@ -185,7 +190,7 @@
 \nocite{VJSSAK:ARCHIVE20}
 \printbibliography[heading=subbibliography,title={Technical Reports},type=report,resetnumbers=true]
 
-\medskip
+\newpage
 
 \nocite{V:TP20}
 \printbibliography[heading=subbibliography,title={Ph.D. Thesis Proposal},type=manual,resetnumbers=true]
@@ -221,6 +226,8 @@ type=misc,resetnumbers=true]
 %\cvlistitem{``CS Major's Research Poster Receives First Place at Conference.'' UST CISC Department, \textit{CISC Department News}, Oct. 2, 2015.}
 %\cvlistitem{``Two CISC Majors Win Prestigious Research Opportunities.'' UST CISC Department, \textit{CISC Department News}, Apr. 2, 2015.}
 
+\newpage
+
 \section{Service}
 %\cventry{}{}{}{}{}{}
 %\subsection{Reviewer}
@@ -230,8 +237,6 @@ type=misc,resetnumbers=true]
 \cvitem{2019 - 2021}{MIT Summer Research Program Application Review}
 \cvitem{2019}{CMU ISR-SE Ph.D. Admissions}
 \cvitem{2017}{CMU REU-SE Admissions}
-
-\newpage
 
 \subsection{Reviewing}
 
@@ -261,6 +266,8 @@ type=misc,resetnumbers=true]
 \cvitem{2010 - 2012}{UST Spanish Tutor}
 \cvitem{2011}{2 STEM Learning Communities}
 \cvitem{2010 - 2011}{UST Morrison Hall Council}
+
+\newpage
 
 \section{References}
 
